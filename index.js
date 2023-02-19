@@ -1,3 +1,35 @@
+// QUESTION--2
+
+// Reverse a number in C.
+
+// Problem Statement: Given a number N reverse the number and print it.
+
+// Examples:
+
+// Example 1:
+// Input: N = 123
+// Output: 321
+// Explanation: The reverse of 123 is 321
+
+const readlineSync = require("readline-sync");
+const numInput = Number(readlineSync.question("Enter a number \n"));
+// console.log(numInput);
+
+function reverseNumber(num) {
+  let reversedNum = 0;
+  while (num !== 0) {
+    const length = Number(String(num).length); //  we can also use function of preious problem.
+    const digit = num % 10;
+    reversedNum += digit * 10 ** (length - 1);
+    // console.log("Reversed no:", reversedNum);
+    num = Math.floor(num / 10);
+  }
+  return reversedNum;
+}
+
+console.log(reverseNumber(numInput));
+/*
+
 // QUESTION--1
 // Problem Statement: Given an integer N , write program to count number of digits in N.
 
@@ -39,5 +71,4 @@ if (number) {
 } else console.log("Enter a valid number");
 
 // console.log(`${numEntered} has ${length} digits`);
-
-// QUESTION--2
+*/
