@@ -27,7 +27,7 @@ function reverseNumber(num) {
   return reversedNum;
 }
 
-console.log(reverseNumber(numInput));
+console.log(reverseNumber(numInput)); //234
 /*
 
 // QUESTION--1
