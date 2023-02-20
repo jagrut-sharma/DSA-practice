@@ -1,3 +1,57 @@
+// QUESTION-3:
+// Given an integer x, return true if x is a
+// palindrome
+// , and false otherwise.
+
+// Example 1:
+
+// Input: x = 121
+// Output: true
+// Explanation: 121 reads as 121 from left to right and from right to left.
+// Example 2:
+
+// Input: x = -121
+// Output: false
+// Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+const isPalindrome = function (x) {
+  let num = x;
+  if (num < 0 || (num % 10 === 0 && num !== 0)) return false;
+  let reversedNum = 0;
+  while (reversedNum < num) {
+    reversedNum = reversedNum * 10 + (num % 10);
+    num = Math.floor(num / 10);
+    // console.log("reversedNum", reversedNum);
+    // console.log("num =", num);
+  }
+
+  // console.log("Final:", reversedNum);
+  return num === reversedNum || num === Math.floor(reversedNum / 10);
+};
+
+/*
+const isPalindrome = function (x) {
+  if (x < 0) return false;
+  return x === getReverseNumber(x);
+};
+
+const getReverseNumber = function (num) {
+  let reversedNum = 0;
+  while (num !== 0) {
+    const digit = num % 10;
+    reversedNum = reversedNum * 10 + digit;
+    num = Math.trunc(num / 10);
+  }
+  return reversedNum;
+};
+*/
+console.log(isPalindrome(121)); // true
+// console.log(isPalindrome(100)); // false
+// console.log(isPalindrome(1221)); // true
+// console.log(isPalindrome(-121)); // false
+// console.log(isPalindrome(101)); // true
+
+/*
 // QUESTION--2
 
 // Reverse a number in C.
