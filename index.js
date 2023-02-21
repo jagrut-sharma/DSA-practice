@@ -1,3 +1,29 @@
+// Finding GCD/HCF:
+
+const findHCF = function (numOne, numTwo) {
+  // find multiples.
+  const min = numOne < numTwo ? numOne : numTwo;
+  let hcf = 1;
+  for (i = 1; i <= min; i++) {
+    if (numOne % i === 0 && numTwo % i === 0) hcf = i;
+  }
+  console.log(hcf);
+};
+
+// euclidean HCF
+
+const euclideanHCF = function (numA, numB) {
+  if (numB === 0) return numA;
+  return euclideanHCF(numB, numA % numB);
+};
+
+// findHCF(4, 8);
+// findHCF(3, 6);
+console.log(euclideanHCF(4, 8));
+console.log(euclideanHCF(3, 6));
+console.log(euclideanHCF(25, 60));
+
+/*
 // Given a 32 bit number X, reverse its binary form and print the answer in decimal.
 
 // Example 1:
