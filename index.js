@@ -1,3 +1,57 @@
+// Given a 32 bit number X, reverse its binary form and print the answer in decimal.
+
+// Example 1:
+
+// Input:
+// X = 1
+// Output:
+// 2147483648
+// Explanation:
+// Binary of 1 in 32 bits representation-
+// 00000000000000000000000000000001
+// Reversing the binary form we get,
+// 10000000000000000000000000000000,
+// whose decimal value is 2147483648.
+
+function binaryReverse(n) {
+  const num = n;
+  const binaryNumber32Bit = addPadStart(binaryConverter(num));
+  // console.log(binaryNumber32Bit);
+  const reverseBinary = reverseStrBinary(binaryNumber32Bit);
+  return parseInt(reverseBinary, 2);
+}
+
+const binaryConverter = function (num) {
+  let binaryDigit = "";
+  while (num != 0) {
+    binaryDigit += num % 2;
+    num = Math.trunc(num / 2);
+  }
+  return reverseStrBinary(binaryDigit);
+};
+
+const addPadStart = function (binaryStr) {
+  // console.log(binaryStr)
+  let lengthRequired = 32 - binaryStr.length;
+  let str = "";
+  while (str.length !== lengthRequired) {
+    str += "0";
+  }
+  return str + binaryStr;
+};
+
+const reverseStrBinary = function (binaryStr) {
+  let binaryNumber = "";
+  for (let i = binaryStr.length - 1; i >= 0; i--) {
+    binaryNumber += binaryStr[i];
+  }
+  return binaryNumber;
+};
+
+// console.log(binaryReverse(10));
+console.log(binaryReverse(1));
+
+/*
 // QUESTION-3:
 // Given an integer x, return true if x is a
 // palindrome
@@ -45,7 +99,7 @@ const getReverseNumber = function (num) {
   return reversedNum;
 };
 */
-console.log(isPalindrome(121)); // true
+// console.log(isPalindrome(121)); // true
 // console.log(isPalindrome(100)); // false
 // console.log(isPalindrome(1221)); // true
 // console.log(isPalindrome(-121)); // false
