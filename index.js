@@ -1,3 +1,30 @@
+// Armstrong Number:
+function armstrongChecker(num) {
+  let number = num;
+  const numLength = calcLength(number);
+  let sum = 0;
+  while (number !== 0) {
+    sum += (number % 10) ** numLength;
+    number = Math.trunc(number / 10);
+  }
+  return sum === num ? "Yes" : "No";
+}
+
+function calcLength(num) {
+  let number = num;
+  let count = 0;
+  while (number !== 0) {
+    count++;
+    number = Math.trunc(number / 10);
+  }
+  return count;
+}
+
+console.log(armstrongChecker(123));
+console.log(armstrongChecker(153));
+
+/*
+
 // Finding GCD/HCF:
 
 const findHCF = function (numOne, numTwo) {
@@ -96,12 +123,12 @@ console.log(binaryReverse(1));
 
 const isPalindrome = function (x) {
   let num = x;
-  if (num < 0 || (num % 10 === 0 && num !== 0)) return false;
+  if (num < 0)  return false;
   let reversedNum = 0;
   while (reversedNum < num) {
     reversedNum = reversedNum * 10 + (num % 10);
     num = Math.floor(num / 10);
-    // console.log("reversedNum", reversedNum);
+    // console.log("reversedNum", reversedNum); 
     // console.log("num =", num);
   }
 
