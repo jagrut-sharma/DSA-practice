@@ -1,3 +1,30 @@
+// Find all divisors or sum of all divisors:
+
+function findDivisor(n) {
+  const num = n;
+  let str = "";
+  // for(let counter = 1; counter <= num; counter++) {
+  //   if (num % counter === 0) str += `${counter} `;
+  // }
+  // console.log(str);
+  // let count = 0; // FOR GFG(https://practice.geeksforgeeks.org/problems/sum-of-all-divisors-from-1-to-n4738/1) --> while(num!=n) --> where num = 1 will be starting point;
+  let limit = Math.trunc(Math.sqrt(num));
+  for (let counter = 1; counter <= limit; counter++) {
+    if (num % counter === 0) {
+      if (counter === Math.trunc(num / counter))
+        str += `${counter} `; // count++;
+      else str += `${counter} ${Math.trunc(num / counter)} `; // count += 2;
+    }
+  }
+  console.log(str); // return string here
+}
+
+findDivisor(36);
+findDivisor(48);
+// findDivisor(15);
+// findDivisor(4);
+
+/*
 // Armstrong Number:
 function armstrongChecker(num) {
   let number = num;
