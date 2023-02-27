@@ -1,3 +1,58 @@
+// Prime number:
+
+// Method -2:
+const isPrime = function (n) {
+  let num = n;
+  let sqrt = Math.trunc(Math.sqrt(num));
+  if (num === 1) return "Non Prime";
+
+  for (let i = 2; i <= sqrt; i++) {
+    if (num % i === 0) return "Non prime";
+  }
+  return "prime";
+};
+
+console.log(isPrime(9));
+console.log(isPrime(127));
+console.log(isPrime(3));
+console.log(isPrime(7));
+
+/*
+
+// Method-1:
+
+const isPrime = function (n) {
+  let num = n;
+
+  if (num === 1) return "Non prime";
+
+  if (num < 10) {
+    if (num === 2 || num === 3 || num === 5 || num === 7) return "prime";
+    return "Non Prime";
+  } else {
+    // To handle multiples
+    if (
+      num % 2 === 0 ||
+      num % 3 === 0 ||
+      num % 5 === 0 ||
+      num % 7 === 0 ||
+      num % 9 === 0
+    )
+      return "Non prime";
+
+    // To handle square
+    if (Math.sqrt(num) % 1 === 0) return "Non-prime";
+
+    return "Prime Number";
+  }
+};
+
+console.log(isPrime(9));
+console.log(isPrime(127));
+console.log(isPrime(3));
+console.log(isPrime(7));
+
+/*
 // Find two sums:
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
