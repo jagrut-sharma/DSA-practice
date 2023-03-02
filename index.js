@@ -1,3 +1,29 @@
+// Basic Recursion:
+
+// Print numbers from 1 to N without the help of loops.
+
+// Example:
+// Input:
+// N = 10
+// Output: 1 2 3 4 5 6 7 8 9 10
+
+// const readlineSync = require('readline-sync');
+// const n = readlineSync.question('Enter value upto which you need to print \n');
+let str = "";
+const printToN = function (i, n) {
+  const count = i;
+  const num = n;
+  if (num === count) return num;
+  str += `${count} ${printToN(count + 1, num)}`;
+  return str;
+};
+
+console.log(printToN(1, 5));
+
+// add a number to str => call a function for this.
+// Stop at 1.
+
+/*
 // Prime number:
 
 // Method -2:
