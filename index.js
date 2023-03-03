@@ -1,3 +1,20 @@
+// PRINT 1 to N using backtrack:
+const readlineSync = require("readline-sync");
+const n = readlineSync.question(
+  "Enter number upto which you want to print: \n"
+);
+
+let str = "";
+const printUptoN = function (n) {
+  if (n <= 1) return 1;
+  // Function is called first and then the original n is added to str
+  str += `${printUptoN(n - 1)} ${n}`;
+  return str;
+};
+
+console.log(printUptoN(n));
+
+/*
 const readlineSync = require("readline-sync");
 const name = readlineSync.question("Enter name: \n");
 const n = readlineSync.question("Enter no. of times, you need to print \n");
