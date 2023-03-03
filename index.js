@@ -1,3 +1,35 @@
+const readlineSync = require("readline-sync");
+const name = readlineSync.question("Enter name: \n");
+const n = readlineSync.question("Enter no. of times, you need to print \n");
+
+let str = "";
+const printNameNTimes = function (name, n) {
+  if (n === 1) return name;
+  str += `${name} ${printNameNTimes(name, n - 1)}`;
+  return str;
+};
+
+console.log(printNameNTimes(name, n));
+
+/* 
+// PRINT N to 1 - Recursion
+
+const readlineSync = require('readline-sync');
+const n = readlineSync.question('Enter value upto which you need to print \n');
+
+let str = '';
+const printToN = function(n) {
+  // const count = i;
+  const num = n;
+  if (num === 1) return 1;
+  str += `${num} ${printToN(num - 1)}`;
+  return str;
+}
+
+console.log(printToN(n));
+*/
+
+/*
 // Basic Recursion:
 
 // Print numbers from 1 to N without the help of loops.
