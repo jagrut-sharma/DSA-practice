@@ -1,3 +1,24 @@
+// Problem statement: Given a number ‘N’, find out the sum of the first N natural numbers.
+
+// Examples:
+
+// Example 1:
+// Input: N=5
+// Output: 15
+// Explanation: 1+2+3+4+5=15
+const readlineSync = require("readline-sync");
+const n = Number(readlineSync.question("Enter number: \n"));
+
+let sum = 0;
+const sumOfNumbers = function (n) {
+  if (n === 1) return 1;
+  sum += n + sumOfNumbers(n - 1);
+  return sum;
+};
+
+console.log(sumOfNumbers(n));
+
+/*
 // PRINT 1 to N using backtrack:
 const readlineSync = require("readline-sync");
 const n = readlineSync.question(
