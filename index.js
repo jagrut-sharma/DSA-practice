@@ -1,3 +1,28 @@
+// Problem Statement: Given a number X, print its factorial.
+
+// To obtain the factorial of a number, it has to be multiplied by all the whole numbers preceding it.More precisely X! = X * (X - 1) * (X - 2) … 1.
+
+// Note: X  is always a positive number.
+
+//   Examples:
+
+// Example 1:
+// Input: X = 5
+// Output: 120
+// Explanation: 5! = 5 * 4 * 3 * 2 * 1
+const readlineSync = require("readline-sync");
+const n = Number(readlineSync.question("Enter number to find factorial: \n"));
+
+let ansFactorial = 1;
+const factorial = function (n) {
+  if (n <= 1 || n === 0) return 1;
+  ansFactorial = n * factorial(n - 1);
+  return ansFactorial;
+};
+
+console.log(factorial(n));
+
+/*
 // Problem statement: Given a number ‘N’, find out the sum of the first N natural numbers.
 
 // Examples:
