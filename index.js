@@ -1,3 +1,25 @@
+// Problem Statement: You are given an array. The task is to reverse the array and print it using recursion.
+
+// const reversedArr = [];
+const reverseArr = function (arr, i) {
+  // for (let i = 0; i < length; i++) {
+  //   reversedArr[i] = arr[length - i - 1];
+  // }
+  if (i >= arr.length / 2) return;
+  let temp = arr[i];
+  arr[i] = arr[arr.length - i - 1];
+  arr[arr.length - i - 1] = temp;
+  reverseArr(arr, i + 1);
+  return arr;
+};
+
+const arr = [1, 2, 3, 4, 5];
+const arr1 = [20, 245, 453, 124, 65, 10];
+
+console.log(reverseArr(arr, 0));
+console.log(reverseArr(arr1, 0));
+
+/*
 // Problem Statement: Given a number X, print its factorial.
 
 // To obtain the factorial of a number, it has to be multiplied by all the whole numbers preceding it.More precisely X! = X * (X - 1) * (X - 2) … 1.
