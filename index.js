@@ -1,3 +1,24 @@
+// Problem Statement: “Given a string, check if the string is palindrome or not.”  A string is said to be palindrome if the reverse of the string is the same as the string
+
+// Example 1:
+// Input: Str =  “ABCDCBA”
+// Output: Palindrome
+
+// Example 2:
+// Input: Str = “TAKE U FORWARD”
+// Output: Not Palindrome
+
+const isPalindrome = function (str, i) {
+  if (i >= str.length / 2) return;
+  if (str[i] !== str[str.length - 1 - i]) return "Not A Palindrome";
+  isPalindrome(str, i + 1);
+  return "Is Palindrome";
+};
+
+console.log(isPalindrome("ABCBA", 0));
+console.log(isPalindrome("TAKE U FORWARD", 0));
+
+/*
 // Problem Statement: You are given an array. The task is to reverse the array and print it using recursion.
 
 // const reversedArr = [];
