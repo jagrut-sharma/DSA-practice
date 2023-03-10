@@ -1,3 +1,31 @@
+// FIBONACCI SERIES: Current number is sum of last 2 digits: 0 1 1 2 3 5 8 13 .... => Recursion
+const readlineSync = require("readline-sync");
+const n = Number(readlineSync.question("Enter a number: \n"));
+
+const findFibonacci = function (n) {
+  // For handling 0 and 1
+  if (n <= 1) return n;
+  const last = findFibonacci(n - 1);
+  const secondLast = findFibonacci(n - 2);
+  return last + secondLast;
+};
+
+const forFibonacci = function (n) {
+  let n1 = 0,
+    n2 = 1,
+    nextTerm;
+  for (let i = 1; i <= n; i++) {
+    console.log(n1);
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;
+  }
+};
+
+// console.log(findFibonacci(n));
+console.log(forFibonacci(n));
+
+/*
 // Problem Statement: “Given a string, check if the string is palindrome or not.”  A string is said to be palindrome if the reverse of the string is the same as the string
 
 // Example 1:
