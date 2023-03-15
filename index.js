@@ -1,3 +1,37 @@
+function frequencyCount(arr, N, P) {
+  const testArr = new Array(P).fill(0);
+  console.log(testArr);
+  for (let i = 0; i < N; i++) {
+    testArr[arr[i] - 1] += 1;
+  }
+  return testArr;
+}
+
+console.log(...frequencyCount([2, 3, 2, 3, 5], 5, 5));
+/*
+const checkFrequency = function(arr) {
+  const testObj = new Map();
+  for (const ele of arr) {
+    if (!testObj.has(ele)) testObj.set(ele, 1)
+    else testObj.set(ele, testObj.get(ele) + 1)
+  }
+  return testObj;
+  // for (const ele of testObj) console.log(ele);
+}
+
+const checkFrequency2 = function(arr) {
+  const testObj = {};
+  arr.forEach(ele => !testObj[ele] ? testObj[ele] = 1 : testObj[ele] += 1);
+  return Object.values(testObj);
+}
+
+const arr = [10, 5, 10, 15, 10, 5];
+
+
+console.log(checkFrequency(arr));
+console.log(...checkFrequency2(arr));
+
+/*
 // FIBONACCI SERIES: Current number is sum of last 2 digits: 0 1 1 2 3 5 8 13 .... => Recursion
 const readlineSync = require("readline-sync");
 const n = Number(readlineSync.question("Enter a number: \n"));
