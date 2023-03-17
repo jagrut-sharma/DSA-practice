@@ -1,3 +1,31 @@
+const topK = function (arr, k) {
+  const frequencyObj = new Map();
+  for (const num of arr) {
+    frequencyObj.set(num, (frequencyObj.get(num) || 0) + 1);
+  }
+  // console.log(frequencyObj);
+
+  const keyValue = Array.from(frequencyObj);
+  // console.log(keyValue);
+
+  keyValue.sort((a, b) => {
+    if (a[1] === b[1]) return b[0] - a[0];
+    return b[1] - a[1];
+  });
+  // console.log(keyValue);
+
+  const maxRepeat = [];
+  for (let j = 0; j < k; j++) {
+    maxRepeat[j] = keyValue[j][0];
+  }
+
+  console.log(maxRepeat);
+};
+
+topK([1, 1, 1, 2, 2, 3], 2);
+topK([1, 1, 2, 2, 3, 3, 3, 4], 2);
+
+/*
 function frequencyCount(arr, N, P) {
   const testArr = new Array(P).fill(0);
   console.log(testArr);
